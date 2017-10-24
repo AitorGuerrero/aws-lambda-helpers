@@ -1,0 +1,33 @@
+{
+  "name": "aws-lambda-helpers",
+  "version": "1.0.0",
+  "description": "Some helpers to ease services creation through lambda, like async lambdas.",
+  "main": "./lib/index.js",
+  "types": "./lib.d/index.d.ts",
+  "scripts": {
+    "preversion": "npm install && npm run build && npm run check:install",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "rm -Rf ./lib && rm -Rf ./lib.d",
+    "build": "tsc",
+    "check:install": "npm install . -g",
+    "check:build": "tsc --noEmit",
+    "check:style": "tslint -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AitorGuerrero/aws-sdk-async.git"
+  },
+  "author": "Aitor Guerrero<aguerrerolasarte@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AitorGuerrero/aws-sdk-async/issues"
+  },
+  "homepage": "https://github.com/AitorGuerrero/aws-sdk-async#readme",
+  "devDependencies": {
+    "@types/node": "^8.0.34",
+    "aws-sdk": "^2.133.0",
+    "husky": "^0.14.3",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  }
+}
