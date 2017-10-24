@@ -1,2 +1,2 @@
-export * from './handler.service';
-export * from './api-handler.service';
+export * from './handler.functor';
+export * from './api-gateway/api-handler.functor';

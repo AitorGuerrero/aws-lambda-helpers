@@ -1,13 +1,7 @@
-import {IAsyncApiHandler} from './api-gateway.interfaces';
+import IAsyncApiHandler from './async-api-handler.interfaces';
+import ApiGatewayError from './error.class';
 
-export class ApiGatewayError extends Error {
-	constructor(name: string, public statusCode: number, public detail?: any) {
-		super();
-		this.name = name;
-	}
-}
-
-export default function build(handle: IAsyncApiHandler): IAsyncApiHandler {
+export default function apply(handle: IAsyncApiHandler): IAsyncApiHandler {
 	return async (event, ctx) => {
 		try {
 			return await handle(event, ctx);
@@ -23,7 +17,11 @@ function transformError(err: any, awsRequestId: string) {
 		return {
 			body: JSON.stringify({
 				awsRequestId,
-				error: {code: err.name, detail: err.detail},
+				error: {
+					code: err.name,
+					detail: err.detail,
+					message: err.message,
+				},
 				success: false,
 			}),
 			headers: {},

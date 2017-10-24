@@ -1,4 +1,4 @@
-import IContext from './api-gateway.interfaces';
+import IContext from './context.interface';
 
 export type IAsyncHandler<E, R> = (event: E, context: IContext) => Promise<R>;
 

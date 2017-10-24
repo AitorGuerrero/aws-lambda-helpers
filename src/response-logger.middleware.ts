@@ -1,4 +1,4 @@
-import {IAsyncHandler} from './async-handler.service';
+import {IAsyncHandler} from './async-handler.functor';
 
 export default function apply<E, R>(h: IAsyncHandler<E, R>): IAsyncHandler<E, R> {
 	return async (event, ctx) => {
