@@ -9,6 +9,6 @@
       true,
       "tabs"
     ],
-    "no-console": true
+    "no-console": false
   }
 }
