@@ -1,6 +1,10 @@
 export default class ApiGatewayError extends Error {
-	constructor(code: string, public statusCode: number, message: string, public detail?: any) {
+
+	public statusCode: number;
+
+	constructor(code: string, statusCode?: number, message?: string, public detail?: any) {
 		super(message);
 		this.name = code;
+		this.statusCode = statusCode || 500;
 	}
 }

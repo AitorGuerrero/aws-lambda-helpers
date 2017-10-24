@@ -1,5 +1,5 @@
 {
-  "name": "aws-lambda-helpers",
+  "name": "aws-lambda-pro",
   "version": "1.0.0-0",
   "description": "Some helpers to ease services creation through lambda, like async lambdas.",
   "main": "./lib/index.js",
