@@ -8,7 +8,15 @@ export default function apply<E, R>(
 		try {
 			return await h(event, ctx);
 		} catch (err) {
-			console.error('[ERROR]', JSON.stringify(err));
+			if (err instanceof Error) {
+				console.log(`
+[LAMBDA-HANDLER] [ERROR]
+${err.stack}
+${JSON.stringify(err)}
+`);
+			} else {
+				console.error('[LAMBDA-HANDLER] [ERROR]', JSON.stringify(err));
+			}
 
 			throw err;
 		}

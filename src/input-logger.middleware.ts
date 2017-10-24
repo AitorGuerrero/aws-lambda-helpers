@@ -5,7 +5,7 @@ export default function apply<E, R>(
 	console: Console,
 ): IAsyncHandler<E, R> {
 	return (event, ctx) => {
-		console.log(`[INPUT] ${JSON.stringify(event)}`);
+		console.log(`[LAMBDA-HANDLER] [INPUT] ${JSON.stringify(event)}`);
 
 		return h(event, ctx);
 	};
