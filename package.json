@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-helpers",
-  "version": "1.0.0",
+  "version": "1.0.1-0",
   "description": "Some helpers to ease services creation through lambda, like async lambdas.",
   "main": "./lib/index.js",
   "types": "./lib.d/index.d.ts",
