@@ -4,7 +4,7 @@ import IHandler from './handler.interface';
 import applyInputLoggerMiddleware from './input-logger.middleware';
 import applyResponseLoggerMiddleware from './response-logger.middleware';
 
-export function buildHandler<E, R>(h: IAsyncHandler<E, R>): IHandler<E, R> {
+export function buildAuthHandler<E, R>(h: IAsyncHandler<E, R>): IHandler<E, R> {
 	return buildSyncHandler(
 		applyResponseLoggerMiddleware(
 			applyInputLoggerMiddleware(
