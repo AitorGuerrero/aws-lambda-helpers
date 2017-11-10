@@ -1,5 +1,6 @@
 export default interface IResponse {
-	statusCode: number;
-	headers: {[name: string]: string | boolean | void};
 	body: string;
+	headers?: {[name: string]: any};
+	isBase64Encoded?: boolean;
+	statusCode: number;
 }
