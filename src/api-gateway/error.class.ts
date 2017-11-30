@@ -1,4 +1,4 @@
-export default class ApiGatewayError extends Error {
+export class ApiGatewayError extends Error {
 
 	public statusCode: number;
 

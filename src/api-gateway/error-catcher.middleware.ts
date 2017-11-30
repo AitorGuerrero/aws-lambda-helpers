@@ -1,5 +1,5 @@
 import IAsyncApiHandler from './async-api-handler.interfaces';
-import ApiGatewayError from './error.class';
+import {ApiGatewayError} from './error.class';
 
 export default function apply(handle: IAsyncApiHandler): IAsyncApiHandler {
 	return async (event, ctx) => {
